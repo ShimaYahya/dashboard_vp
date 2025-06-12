@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content>
+    <meta name="author" content>
+
+    <title>Volunteer Hub - Admin Dashboard</title>
+
+    <!-- Custom fonts -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+      type="text/css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+        id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a
+          class="sidebar-brand d-flex align-items-center justify-content-center"
+          href="index.html">
+          <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <div class="sidebar-brand-text mx-3">Volunteer Admin</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0" />
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider" />
+
+        <!-- Heading -->
+        <div class="sidebar-heading">Manage</div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <!-- Nav Item - Projects -->
+        <li class="nav-item">
+          <a class="nav-link" href="projects.html">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Projects</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+                <a class="nav-link" href="add-project.html">
+                    <i class="fas fa-fw fa-plus-circle"></i>
+                    <span>Add New Project</span>
+                </a>
+            </li>
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <!-- Nav Item - Categories -->
+        <li class="nav-item">
+          <a class="nav-link" href="categories.html">
+            <i class="fas fa-fw fa-tags"></i>
+            <span>Categories</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link" href="execution.html">
+            <i class="fas fa-fw fa-cogs"></i>
+            <span>Execution Types</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Charts -->
+        
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block" />
+
+        <!-- Nav Item - Logout -->
+        <li class="nav-item">
+          <a class="nav-link " href="#" data-toggle="modal"
+            data-target="#logoutModal">
+            <i class="fas fa-fw fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+        </li>
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </ul>
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav
+            class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- Sidebar Toggle (Topbar) -->
+            <button
+              id="sidebarToggleTop"
+              class="btn btn-link d-md-none rounded-circle mr-3">
+              <i class="fa fa-bars"></i>
+            </button>
+
+            <h5 class="text-gray-800 font-weight-bold pl-3 pt-2">Admin
+              Dashboard</h5>
+            <!-- Topbar Navbar -->
+            
+          </nav>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <h1 class="h3 mb-4 text-gray-800">Edit Project</h1>
+            <div class="card shadow mb-4">
+              <div class="card-body">
+                <form action="update-project.php" method="POST"
+                  enctype="multipart/form-data">
+                  <!-- Hidden ID field -->
+                  <input type="hidden" name="project_id" value="123">
+                  <!-- Replace 123 with dynamic ID -->
+
+                  <div class="form-group">
+                    <label>Project Title</label>
+                    <input type="text" name="title" class="form-control"
+                      value="Community Beach Clean-up" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Project Manager</label>
+                    <input type="text" name="manager" class="form-control"
+                      value="Ayşe Kaya" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Start Date</label>
+                    <input type="date" name="start_date" class="form-control"
+                      value="2025-06-10">
+                  </div>
+
+                  <div class="form-group">
+                    <label>End Date</label>
+                    <input type="date" name="end_date" class="form-control"
+                      value="2025-06-10">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Deadline</label>
+                    <input type="date" name="time" class="form-control"
+                      value="2025-06-10">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Country</label>
+                    <select name="country_id" class="form-control"
+                      id="countrySelect">
+                      <option value>Loading countries...</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>City</label>
+                    <select name="city_id" class="form-control" id="citySelect">
+                      <option value>Select country first</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Execution Type</label>
+                    <select name="execution_type" class="form-control"
+                      id="executionSelect">
+                      <option value>Loading Execution...</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Volunteers Needed</label>
+                    <input type="number" name="volunteers_needed"
+                      class="form-control" value="30">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Available</label>
+                    <select name="available" class="form-control">
+                      <option selected>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Conditions</label>
+                    <textarea name="conditions"
+                      class="form-control">Bring gloves and stay for at least 2 hours.</textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" name="description" rows="4"
+                      required>This is the current description of the project...</textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Created At</label>
+                    <input type="date" class="form-control" name="created_at"
+                      value="2025-05-10" readonly>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Contact Name</label>
+                    <input type="text" name="contact_name" class="form-control"
+                      value="Fatma Yılmaz">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Contact Email</label>
+                    <input type="email" name="contact_email"
+                      class="form-control" value="fatma.yilmaz@example.com">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Contact Phone</label>
+                    <input type="text" name="contact_phone" class="form-control"
+                      value="+90 555 678 9012">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="projectImageDisplay">Project Image</label>
+                    <img id="projectImageDisplay" src
+                      alt="Project image will appear here"
+                      style="max-width: 300px; height: auto; border: 1px solid #ddd; margin-top: 10px; display: block;">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Project Image</label>
+                    <input type="file" name="photo" class="form-control-file">
+                  </div>
+
+                  <button type="button" class="btn btn-primary"
+                    onclick="handleUpdate()">Update Project</button>
+
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- End Page Content -->
+
+          <!-- Footer -->
+          <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+              <div class="copyright text-center my-auto">
+                <span>Copyright &copy; VolunteerHub 2025</span>
+              </div>
+            </div>
+          </footer>
+          <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+      </div>
+      <!-- End of Page Wrapper -->
+
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+
+      <!-- Logout Modal-->
+      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ready to
+                Leave?</h5>
+              <button class="close" type="button" data-dismiss="modal"
+                aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to
+              end your current session.</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button"
+                data-dismiss="modal">Cancel</button>
+              <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bootstrap core JavaScript-->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+      <!-- Core plugin JavaScript-->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+      <!-- Custom scripts for all pages-->
+      <script src="js/sb-admin-2.min.js"></script>
+      <script src="js/edit-project.js"></script>
+
+      <script>
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('id');
+
+    if (!projectId) {
+        alert("لم يتم العثور على معرّف المشروع في الرابط.");
+        return;
+    }
+
+    const token = localStorage.getItem('adminToken');
+    if (!token) {
+        alert('أنت غير مصادق. يرجى تسجيل الدخول.');
+        window.location.href = 'login.html';
+        return;
+    }
+
+    const countrySelect = document.getElementById('countrySelect');
+    const executionSelect = document.getElementById('executionSelect');
+    const citySelect = document.getElementById('citySelect');
+    const projectImageDisplay = document.getElementById('projectImageDisplay');
+    // **التعديل هنا:** تأكد أن هذا السيلكتور يطابق اسم الحقل في HTML (يجب أن يكون 'photo')
+    const projectImageInput = document.querySelector('input[name="photo"]'); 
+
+    // تخزين مسار الصورة الأصلي عند تحميل الصفحة لاستخدامه في حالة عدم تغيير الصورة
+    let originalPhotoUrl = '';
+
+    const fetchExecutionType = async () => {
+        try {
+            const response = await fetch('http://localhost:3000/execution_type');
+            if (!response.ok) {
+                throw new Error(`خطأ HTTP! الحالة: ${response.status}`);
+            }
+            const execution = await response.json();
+            populateDropdown(executionSelect, execution.data, 'id', 'execution_type', 'اختر نوع التنفيذ');
+        } catch (error) {
+            console.error('خطأ في جلب أنواع التنفيذ:', error);
+            executionSelect.innerHTML = '<option value="">فشل تحميل أنواع التنفيذ</option>';
+        }
+    };
+
+    const fetchCountries = async () => {
+        try {
+            const response = await fetch('http://localhost:3000/countries');
+            if (!response.ok) {
+                throw new Error(`خطأ HTTP! الحالة: ${response.status}`);
+            }
+            const countries = await response.json();
+            populateDropdown(countrySelect, countries.data, 'id', 'name', 'اختر دولة');
+        } catch (error) {
+            console.error('خطأ في جلب الدول:', error);
+            countrySelect.innerHTML = '<option value="">فشل تحميل الدول</option>';
+        }
+    };
+
+    const fetchCities = async (countryId) => {
+        citySelect.innerHTML = '<option value="">جاري تحميل المدن...</option>';
+        citySelect.disabled = true;
+
+        if (!countryId) {
+            citySelect.innerHTML = '<option value="">اختر دولة أولاً</option>';
+            citySelect.disabled = true;
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:3000/cities`);
+            if (!response.ok) {
+                throw new Error(`خطأ HTTP! الحالة: ${response.status}`);
+            }
+            const cities = await response.json();
+            const theSameCountry = cities.data.filter(city => city.CountryId == countryId);
+            populateDropdown(citySelect, theSameCountry, 'id', 'name', 'اختر مدينة');
+            citySelect.disabled = false;
+        } catch (error) {
+            console.error('خطأ في جلب المدن:', error);
+            citySelect.innerHTML = '<option value="">فشل تحميل المدن</option>';
+            citySelect.disabled = false;
+        }
+    };
+
+    const populateDropdown = (selectElement, items, valueKey, textKey, defaultOptionText) => {
+        selectElement.innerHTML = '';
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = defaultOptionText;
+        selectElement.appendChild(defaultOption);
+
+        if (!Array.isArray(items)) {
+            console.error('populateDropdown: العناصر المستلمة ليست مصفوفة:', items);
+            return;
+        }
+
+        items.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item[valueKey];
+            option.textContent = item[textKey];
+            selectElement.appendChild(option);
+        });
+    };
+
+    countrySelect.addEventListener('change', (event) => {
+        const selectedCountryId = event.target.value;
+        if (selectedCountryId) {
+            fetchCities(selectedCountryId);
+        } else {
+            citySelect.innerHTML = '<option value="">اختر دولة أولاً</option>';
+            citySelect.disabled = true;
+        }
+    });
+
+    // جلب بيانات المشروع وتعبئة النموذج
+    fetch(`http://localhost:3000/projects/${projectId}`, {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('فشل جلب بيانات المشروع');
+        }
+        return response.json();
+    })
+    .then(async data => {
+        // تأكد من جلب القوائم المنسدلة قبل تعبئة النموذج
+        await fetchCountries();
+        await fetchExecutionType();
+
+        populateForm(data);
+        console.log("بيانات المشروع الأولية:", data);
+        // تخزين مسار الصورة الأصلي
+        originalPhotoUrl = data.data.photo || ''; 
+    })
+    .catch(error => {
+        console.error('خطأ في جلب المشروع:', error);
+        alert('خطأ في جلب المشروع: ' + error.message);
+    });
+
+    window.handleUpdate = function () {
+        const form = document.querySelector("form");
+        const formData = new FormData(form); // استخدم FormData مباشرةً لجمع كل الحقول
+
+        // **التعديلات على FormData:**
+
+        // قم بإزالة الحقول غير الضرورية أو إعادة تسمية الحقول حسب متطلبات الـ API الخلفي (db.json)
+        // هذه التعديلات ضرورية إذا كانت أسماء حقول النموذج لا تتطابق مباشرة مع أسماء حقول الـ API
+
+        if (formData.has('title')) {
+            formData.set('project_name', formData.get('title'));
+            formData.delete('title');
+        }
+        if (formData.has('manager')) {
+            formData.set('project_manager', formData.get('manager'));
+            formData.delete('manager');
+        }
+        if (formData.has('volunteers_needed')) {
+            formData.set('num_voliunteers', parseInt(formData.get('volunteers_needed'), 10));
+            formData.delete('volunteers_needed');
+        }
+        if (formData.has('time')) {
+            formData.set('deadline', formData.get('time'));
+            formData.delete('time');
+        }
+        if (formData.has('available')) {
+            formData.set('available', formData.get('available') === 'Yes');
+        }
+        if (formData.has('contact_name')) {
+            formData.set('contact_person', formData.get('contact_name'));
+            formData.delete('contact_name');
+        }
+        // تأكد من تحويل المعرفات الرقمية
+        if (formData.has('country_id')) {
+            formData.set('country_id', parseInt(formData.get('country_id'), 10));
+        }
+        if (formData.has('city_id')) {
+            formData.set('city_id', parseInt(formData.get('city_id'), 10));
+        }
+        if (formData.has('execution_type')) {
+            formData.set('execution_type_id', parseInt(formData.get('execution_type'), 10));
+            formData.delete('execution_type');
+        }
+        // حقل created_at للقراءة فقط، يمكن حذفه إذا كان الخادم لا يتوقعه في طلب التحديث
+        formData.delete('created_at');
+
+        // **التعامل مع الصورة:**
+        // بما أن اسم الحقل في HTML أصبح 'photo' (نأمل ذلك!)،
+        // فإن FormData ستلتقطها تلقائيًا بالاسم الصحيح.
+        // نحتاج فقط إلى إزالة الحقل إذا لم يتم اختيار ملف جديد.
+        if (projectImageInput.files.length === 0) {
+            // إذا لم يتم اختيار ملف جديد، قم بإزالة حقل 'photo'
+            // هذا سيمنع Multer من رؤية حقل 'photo' فارغًا
+            // ويشير إلى الخادم بعدم تحديث الصورة (الاحتفاظ بالصورة القديمة)
+            formData.delete('photo');
+        }
+
+        // لا تنسى project_id, فهو موجود في الـ URL
+        formData.delete('project_id'); // هذا الحقل موجود كـ hidden input
+
+        // لعرض محتويات FormData للتصحيح
+        console.log("----- محتويات FormData قبل الإرسال -----");
+        for (let pair of formData.entries()) {
+            console.log(pair[0] + ': ' + pair[1]);
+        }
+        console.log("-----------------------------------------");
+
+
+        fetch(`http://localhost:3000/projects/${projectId}`, {
+            method: 'PUT',
+            headers: {
+                // لا تحدد 'Content-Type' هنا. المتصفح سيقوم بتعيينه تلقائيًا كـ 'multipart/form-data'
+                // عند إرسال FormData، وهذا ضروري للملفات.
+                'Authorization': `Bearer ${token}`
+            },
+            body: formData // أرسل FormData مباشرةً
+        })
+        .then(response => {
+            if (response.ok) {
+                alert("تم تحديث المشروع بنجاح!");
+                window.location.href = 'projects.html';
+            } else {
+                return response.text().then(text => {
+                    console.error("استجابة خطأ من الخادم (PUT):", text);
+                    try {
+                        const errorJson = JSON.parse(text);
+                        throw new Error(errorJson.message || JSON.stringify(errorJson) || `فشل تحديث المشروع بالحالة: ${response.status}`);
+                    } catch (e) {
+                        throw new Error(text || `فشل تحديث المشروع بالحالة: ${response.status}`);
+                    }
+                });
+            }
+        })
+        .catch(error => {
+            console.error('فشل التحديث:', error);
+            alert("فشل تحديث المشروع: " + error.message);
+        });
+    };
+
+    async function populateForm(data) {
+        console.log("--------------- بيانات المشروع لتعبئة النموذج:", data);
+        document.querySelector('input[name="project_id"]').value = data.data.id || '';
+        document.querySelector('input[name="title"]').value = data.data.project_name || '';
+        document.querySelector('input[name="manager"]').value = data.data.project_manager || '';
+        document.querySelector('input[name="start_date"]').value = data.data.start_date || '';
+        document.querySelector('input[name="end_date"]').value = data.data.end_date || '';
+        document.querySelector('input[name="time"]').value = data.data.deadline || '';
+        document.querySelector('input[name="volunteers_needed"]').value = data.data.num_voliunteers || '';
+        document.querySelector('select[name="available"]').value = data.data.available ? 'Yes' : 'No';
+        document.querySelector('textarea[name="conditions"]').value = data.data.conditions || '';
+        document.querySelector('textarea[name="description"]').value = data.data.description || '';
+        document.querySelector('input[name="contact_name"]').value = data.data.contact_person || '';
+        document.querySelector('input[name="contact_email"]').value = data.data.contact_email || '';
+        document.querySelector('input[name="contact_phone"]').value = data.data.contact_phone || '';
+        document.querySelector('input[name="created_at"]').value = data.data.created_at ? data.data.created_at.split('T')[0] : '';
+
+
+        if (data.data.execution_type_id) {
+            executionSelect.value = data.data.execution_type_id;
+        }
+
+        const projectCountryId = data.data.country_id;
+        if (projectCountryId) {
+            countrySelect.value = projectCountryId;
+            await fetchCities(projectCountryId);
+            if (data.data.city_id) {
+                document.querySelector('select[name="city_id"]').value = data.data.city_id;
+            }
+        } else {
+            citySelect.innerHTML = '<option value="">اختر دولة أولاً</option>';
+            citySelect.disabled = true;
+        }
+
+        const projectCategory = data.data.category; // افترض أن 'category' موجودة مباشرة
+        if (projectCategory) {
+            document.querySelector('select[name="category"]').value = projectCategory;
+        }
+
+        // عرض الصورة الحالية
+        const photoUrl = data.data.photo;
+        if (projectImageDisplay && photoUrl) {
+            projectImageDisplay.src = photoUrl;
+            projectImageDisplay.alt = `صورة للمشروع ${data.data.project_name || ''}`;
+        } else {
+            if (projectImageDisplay) {
+                projectImageDisplay.src = '';
+                projectImageDisplay.alt = 'لا توجد صورة متوفرة';
+            }
+        }
+
+        // معاينة الصورة الجديدة عند اختيارها
+        projectImageInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    projectImageDisplay.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                // إذا لم يتم اختيار ملف، أعد عرض الصورة الأصلية (إذا كانت موجودة)
+                // هنا نستخدم `originalPhotoUrl` الذي تم تخزينه عند تحميل الصفحة
+                projectImageDisplay.src = originalPhotoUrl || '';
+                projectImageDisplay.alt = originalPhotoUrl ? `صورة للمشروع ${data.data.project_name || ''}` : 'لا توجد صورة متوفرة';
+            }
+        });
+    }
+});
+
+
+
+
+
+
+
+      </script>
+
+    </body>
+
+  </html>
