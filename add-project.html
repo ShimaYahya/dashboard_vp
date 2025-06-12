@@ -25,7 +25,7 @@
 
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-hands-helping"></i>
                 </div>
@@ -35,7 +35,7 @@
             <hr class="sidebar-divider my-0" />
 
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="home.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -231,7 +231,7 @@
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
+                        <a class="btn btn-primary" href="index.html">Logout</a>
                     </div>
                 </div>
             </div>
@@ -249,7 +249,7 @@
                 const token = localStorage.getItem('adminToken');
                 if (!token) {
                     alert('أنت غير مصادق. يرجى تسجيل الدخول.');
-                    window.location.href = 'login.html';
+                    window.location.href = 'index.html';
                     return;
                 }
 
@@ -503,7 +503,7 @@
 
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-hands-helping"></i>
                 </div>
@@ -513,7 +513,7 @@
             <hr class="sidebar-divider my-0" />
 
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="home.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -715,7 +715,7 @@
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
+                        <a class="btn btn-primary" href="index.html">Logout</a>
                     </div>
                 </div>
             </div>
@@ -733,7 +733,7 @@
                 const token = localStorage.getItem('adminToken');
                 if (!token) {
                     alert('You are not authenticated. Please log in.');
-                    window.location.href = 'login.html';
+                    window.location.href = 'index.html';
                     return;
                 }
 
