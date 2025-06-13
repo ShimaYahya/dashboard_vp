@@ -286,9 +286,11 @@
 
             let originalPhotoUrl = '';
 
+            const API_URL = 'https://backend-vp.onrender.com';
+
             const fetchExecutionType = async () => {
                 try {
-                    const response = await fetch('http://localhost:3000/execution_type');
+                    const response = await fetch(`${API_URL}/execution_type`);
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);
                     }
@@ -302,7 +304,7 @@
 
             const fetchCountries = async () => {
                 try {
-                    const response = await fetch('http://localhost:3000/countries');
+                    const response = await fetch(`${API_URL}/countries`);
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);
                     }
@@ -325,7 +327,7 @@
                 }
 
                 try {
-                    const response = await fetch(`http://localhost:3000/cities`);
+                    const response = await fetch(`${API_URL}/cities`);
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);
                     }
@@ -370,7 +372,7 @@
                 }
             });
 
-            fetch(`http://localhost:3000/projects/${projectId}`, {
+            fetch(`${API_URL}/projects/${projectId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -446,7 +448,7 @@
                 console.log("-----------------------------------------");
 
 
-                fetch(`http://localhost:3000/projects/${projectId}`, {
+                fetch(`${API_URL}/projects/${projectId}`, {
                     method: 'PUT',
                     headers: {
                         'Authorization': `Bearer ${token}`
